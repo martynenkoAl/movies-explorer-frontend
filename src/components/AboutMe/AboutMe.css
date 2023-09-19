@@ -1,0 +1,156 @@
+.student {
+  padding: 110px 70px 100px;
+}
+
+.student__block {
+  grid-template-columns: 600px 1fr;
+  grid-template-rows: auto;
+  grid-template-areas: 'info pic';
+  justify-content: space-between;
+  padding-top: 66px;
+  display: grid;
+}
+
+.student__info {
+  max-width: 600px;
+  grid-area: info;
+}
+
+.student__title {
+  margin: 0;
+  padding: 0 0 18px 0;
+  font-size: 50px;
+  line-height: 58px;
+  font-weight: 400;
+  letter-spacing: -0.04em;
+}
+
+.student__subtitle {
+  margin: 0;
+  padding: 0;
+  font-weight: 500;
+  font-size: 18px;
+  line-height: 20px;
+}
+
+.student__text {
+  padding: 26px 0 0 0;
+  margin: 0;
+  font-size: 14px;
+  line-height: 22px;
+  font-weight: 400;
+}
+
+.student__link {
+  display: inline-block;
+  text-decoration: none;
+  color: #000;
+  padding: 99px 0 0 0;
+  font-size: 14px;
+  line-height: 17px;
+  font-weight: 500;
+  cursor: pointer;
+}
+
+.student__link:hover {
+  opacity: 0.7;
+}
+
+.student__picture {
+  width: 270px;
+  height: 327px;
+  border-radius: 10px;
+  background-image: url('../../images/studentpic2.jpg');
+  object-fit: cover;
+  background-repeat: no-repeat;
+  overflow: hidden;
+  grid-area: pic;
+  justify-self: end;
+}
+
+@media screen and (max-width: 1023px) {
+  .student {
+    padding: 90px 50px;
+  }
+
+  .student__block {
+    grid-template-columns: 364px 1fr;
+  }
+
+  .student__info {
+    max-width: 364px;
+  }
+
+  .student__title {
+    padding: 0 0 16px 0;
+    font-size: 40px;
+    line-height: 40px;
+  }
+
+  .student__subtitle {
+    font-size: 12px;
+    line-height: 18px;
+  }
+
+  .student__text {
+    padding: 20px 0 0 0;
+    font-size: 12px;
+    line-height: 18px;
+  }
+
+  .student__link {
+    padding: 87px 0 0 0;
+  }
+
+  .student__picture {
+    width: 255px;
+    height: 307px;
+  }
+}
+
+@media screen and (max-width: 767px) {
+  .student {
+    padding: 70px 14px;
+  }
+
+  .student__block {
+    grid-template-columns: 292px;
+    grid-template-rows: auto;
+    grid-template-areas:
+      'pic'
+      'info';
+    padding-top: 60px;
+    justify-content: center;
+  }
+
+  .student__info {
+    padding-top: 40px;
+    max-width: 292px;
+  }
+
+  .student__title {
+    padding: 0 0 20px 0;
+    font-size: 30px;
+    line-height: 36px;
+  }
+
+  .student__subtitle {
+    font-size: 11px;
+    line-height: 16px;
+  }
+
+  .student__text {
+    padding: 20px 0 0 0;
+    font-size: 11px;
+    line-height: 16px;
+  }
+
+  .student__link {
+    padding: 40px 0 0 0;
+  }
+
+  .student__picture {
+    width: 292px;
+    height: 352px;
+  }
+}
