@@ -1,5 +1,5 @@
 import React from 'react';
-import { Routes, Route } from 'react-router-dom';
+import { Routes, Route, Navigate } from 'react-router-dom';
 import './App.css';
 import Header from '../Header/Header';
 import Main from '../Main/Main';
@@ -11,6 +11,7 @@ import Profile from '../Profile/Profile';
 import Register from '../Register/Register';
 import Login from '../Login/Login';
 import SavedMovies from '../SavedMovies/SavedMovies';
+import Footer from '../Footer/Footer';
 
 function App() {
   const isLoading = false;
@@ -55,8 +56,10 @@ function App() {
           path='/saved-movies'
           element={isLoading ? <Preloader /> : <SavedMovies />}
         />
-        <Route path='*' element={isLoading ? <Preloader /> : <NotFound />} />
+        <Route path='/404' element={isLoading ? <Preloader /> : <NotFound />} />
+        <Route path='*' element={<Navigate to='/404' replace />} />
       </Routes>
+      <Footer />
       <BurgerMenu onClose={closeBurger} isOpen={isBurgerMenu} />
     </div>
   );

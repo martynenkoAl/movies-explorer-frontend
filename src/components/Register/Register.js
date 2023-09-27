@@ -61,7 +61,11 @@ export default function Register() {
             Что-то пошло не так...
           </span>
         </div>
-        <button type='submit' className='register__btn'>
+        <button
+          type='submit'
+          className='register__btn'
+          aria-label='Зарегистрироваться'
+        >
           Зарегистрироваться
         </button>
       </form>

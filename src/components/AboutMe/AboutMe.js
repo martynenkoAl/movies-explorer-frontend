@@ -17,7 +17,12 @@ export default function AboutMe() {
             Контур». После того, как прошёл курс по веб-разработке, начал
             заниматься фриланс-заказами и ушёл с постоянной работы.
           </p>
-          <a className='student__link' href='https://ya.ru/'>
+          <a
+            className='student__link'
+            href='https://github.com/martynenkoAl'
+            target='_blank'
+            rel='noreferrer'
+          >
             Github
           </a>
         </div>

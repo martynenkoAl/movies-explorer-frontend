@@ -17,7 +17,7 @@
     'back front';
 }
 
-.project__scale_green {
+.project__scale-green {
   grid-area: green;
   text-align: center;
   background-color: #2be080;
@@ -27,7 +27,7 @@
   padding-top: 9px;
 }
 
-.project__scale_grey {
+.project__scale-grey {
   grid-area: grey;
   text-align: center;
   background-color: #f2f2f2;
@@ -37,7 +37,7 @@
   padding-top: 9px;
 }
 
-.project__text_green {
+.project__text-green {
   grid-area: back;
   text-align: center;
   font-weight: 400;
@@ -46,7 +46,7 @@
   color: #a0a0a0;
 }
 
-.project__text_grey {
+.project__text-grey {
   grid-area: front;
   text-align: center;
   font-weight: 400;
@@ -89,24 +89,24 @@
       'back front';
   }
 
-  .project__scale_green {
+  .project__scale-green {
     font-size: 11px;
     line-height: 13px;
     padding-top: 11px;
   }
 
-  .project__scale_grey {
+  .project__scale-grey {
     font-size: 11px;
     line-height: 13px;
     padding-top: 11px;
   }
 
-  .project__text_green {
+  .project__text-green {
     font-size: 11px;
     line-height: 13px;
   }
 
-  .project__text_grey {
+  .project__text-grey {
     font-size: 11px;
     line-height: 13px;
   }

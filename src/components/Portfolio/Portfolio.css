@@ -81,4 +81,8 @@
     padding-right: 4px;
     width: 10px;
   }
+
+  .portfolio__list {
+    padding: 20px 0 0 0;
+  }
 }

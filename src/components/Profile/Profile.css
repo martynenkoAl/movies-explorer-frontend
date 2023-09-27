@@ -46,6 +46,7 @@
   height: 40px;
   border: none;
   padding: 5px 0;
+  text-align: right;
 }
 
 .profile__input:focus {
@@ -70,6 +71,7 @@
   color: #000;
   border: none;
   background-color: #fff;
+  cursor: pointer;
 }
 
 .profile__edit:hover {
@@ -85,14 +87,22 @@
   color: #ff3055;
   border: none;
   background-color: #fff;
+  cursor: pointer;
 }
 
 .profile__exit:hover {
   opacity: 0.7;
 }
 
+.profile__edit-box {
+  display: flex;
+  flex-direction: column;
+  padding-top: 189px;
+  align-content: center;
+}
+
 .profile__save-btn {
-  margin-top: 30px;
+  margin-top: 20px;
   background-color: #3456f3;
   color: #fff;
   border: none;
@@ -109,18 +119,19 @@
   opacity: 0.8;
 }
 
-.profile__save-btn_inactive {
+.profile__save-btn_invalid {
   background-color: #f8f8f8;
   color: #c2c2c2;
 }
 
 .profile__error-msg {
-  padding: 10px 0 0 0;
+  padding: 0;
   margin: 0;
   font-weight: 400;
   font-size: 11px;
   line-height: 13px;
   color: #ff004c;
+  text-align: center;
 }
 
 @media screen and (max-width: 1023px) {

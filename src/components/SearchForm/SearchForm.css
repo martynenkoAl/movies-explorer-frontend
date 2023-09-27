@@ -45,6 +45,7 @@
   align-items: center;
   border-radius: 20px;
   margin-bottom: 13px;
+  cursor: pointer;
 }
 
 .search__button:hover {
@@ -64,6 +65,10 @@
   .search {
     padding: 70px 30px 48px;
   }
+
+  .search__button {
+    width: 64px;
+  }
 }
 
 @media screen and (max-width: 767px) {
@@ -75,5 +80,9 @@
     font-size: 18px;
     line-height: 22px;
     color: #a0a0a0;
+  }
+
+  .search__button {
+    width: 69px;
   }
 }

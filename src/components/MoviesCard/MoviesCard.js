@@ -48,7 +48,7 @@ export default function MoviesCard({ movie: { nameRU, duration, thumbnail } }) {
             className='movie__delete-btn'
           >
             {' '}
-            <img src={cross} alt='Сохранить в избранные' />{' '}
+            <img src={cross} alt='Удалить из избранного' />{' '}
           </button>
         )}
       </div>

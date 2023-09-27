@@ -8,19 +8,34 @@ export default function Portfolio() {
       <h3 className='portfolio__heading'>Портфолио</h3>
       <ul className='portfolio__list'>
         <li className='portfolio__link'>
-          <a className='portfolio__item' href='https://ya.ru/'>
+          <a
+            className='portfolio__item'
+            href='https://github.com/martynenkoAl'
+            target='_blank'
+            rel='noreferrer'
+          >
             <p className='portfolio__item-name'>Статичный сайт</p>
             <img src={arrow} alt='Стрелка' className='portfolio__icon' />
           </a>
         </li>
         <li className='portfolio__link'>
-          <a className='portfolio__item' href='https://ya.ru/'>
+          <a
+            className='portfolio__item'
+            href='https://github.com/martynenkoAl'
+            target='_blank'
+            rel='noreferrer'
+          >
             <p className='portfolio__item-name'>Адаптивный сайт</p>
             <img src={arrow} alt='Стрелка' className='portfolio__icon' />
           </a>
         </li>
         <li className='portfolio__link'>
-          <a className='portfolio__item' href='https://ya.ru/'>
+          <a
+            className='portfolio__item'
+            href='https://github.com/martynenkoAl'
+            target='_blank'
+            rel='noreferrer'
+          >
             <p className='portfolio__item-name'>Одностраничное приложение</p>
             <img src={arrow} alt='Стрелка' className='portfolio__icon' />
           </a>

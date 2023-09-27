@@ -5,7 +5,7 @@ import './MoviesCardList.css';
 
 export default function MoviesCardList() {
   return (
-    <div className='list'>
+    <section className='list'>
       <div className='list__gallery'>
         {movieData.map((movie) => (
           <MoviesCard key={movie.movieId} movie={movie} />
@@ -18,6 +18,6 @@ export default function MoviesCardList() {
       >
         Ещё
       </button>
-    </div>
+    </section>
   );
 }

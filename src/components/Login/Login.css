@@ -4,6 +4,10 @@
   padding: 70px 0;
 }
 
+.login__logo:hover {
+  opacity: 0.8;
+}
+
 .login__greeting {
   padding: 40px 0;
   margin: 0;
@@ -19,6 +23,10 @@
 .login__input-box {
   display: flex;
   flex-direction: column;
+}
+
+.login__input-box:hover {
+  opacity: 0.8;
 }
 
 .login__label {

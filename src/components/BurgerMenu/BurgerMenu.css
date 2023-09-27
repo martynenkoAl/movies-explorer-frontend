@@ -31,6 +31,7 @@
   display: flex;
   flex-direction: column;
   align-items: center;
+  justify-content: space-between;
 }
 
 .burger__close-btn {
@@ -50,10 +51,7 @@
   margin: 0;
   width: 340px;
   list-style: none;
-  position: absolute;
-  top: 159px;
-  left: 90px;
-  padding: 0;
+  padding: 144px 0 0 0;
 }
 
 .burger__item {
@@ -85,9 +83,6 @@
 .burger__account-btn {
   width: 100px;
   height: 32px;
-  position: absolute;
-  bottom: 90px;
-  left: 210px;
   border-radius: 40px;
   background-color: #fff;
   display: flex;
@@ -135,6 +130,7 @@
 @media screen and (max-width: 450px) {
   .burger__container {
     width: 100%;
+    padding: 0 0 46px;
   }
 
   .burger__nav {

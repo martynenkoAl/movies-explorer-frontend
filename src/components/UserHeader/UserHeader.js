@@ -14,7 +14,7 @@ export default function UserHeader({ clickBurger }) {
   const saved = location.pathname === '/saved-movies';
 
   return (
-    <header className={`user-header ${dark && 'user-header_dark'}`}>
+    <div className={`user-header ${dark && 'user-header_dark'}`}>
       <Link className='user-header__logo' to='/' replace>
         <img src={logo} alt='Логотип проекта' />
       </Link>
@@ -50,13 +50,18 @@ export default function UserHeader({ clickBurger }) {
           <img src={account} alt='Аккаунт' />
         </div>
       </Link>
-      <button onClick={clickBurger} className='user-header__burger-btn'>
+      <button
+        onClick={clickBurger}
+        className='user-header__burger-btn'
+        aria-label='Открыть меню'
+        type='button'
+      >
         <img
           className='user-header__burger-pic'
           src={dark ? burgerDark : burgerLight}
           alt='Меню'
         />
       </button>
-    </header>
+    </div>
   );
 }

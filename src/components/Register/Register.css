@@ -4,6 +4,10 @@
   padding: 70px 0;
 }
 
+.register__logo:hover {
+  opacity: 0.8;
+}
+
 .register__greeting {
   padding: 40px 0;
   margin: 0;
@@ -19,6 +23,10 @@
 .register__input-box {
   display: flex;
   flex-direction: column;
+}
+
+.register__input-box:hover {
+  opacity: 0.8;
 }
 
 .register__label {

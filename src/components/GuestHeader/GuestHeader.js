@@ -5,7 +5,7 @@ import logo from '../../images/header-logo.svg';
 
 export default function GuestHeader() {
   return (
-    <header className='guest-header'>
+    <div className='guest-header'>
       <Link className='user-header__logo' to='/' replace>
         <img src={logo} alt='Логотип проекта' />
       </Link>
@@ -17,6 +17,6 @@ export default function GuestHeader() {
           <p className='guest-header__btn-text'>Войти</p>
         </Link>
       </nav>
-    </header>
+    </div>
   );
 }

@@ -15,6 +15,7 @@
   display: flex;
   justify-content: flex-end;
   align-items: center;
+  cursor: pointer;
 }
 
 .switch__label:hover {
@@ -45,6 +46,11 @@
   display: flex;
   justify-content: flex-start;
   align-items: center;
+  cursor: pointer;
+}
+
+.switch__label_active:hover {
+  opacity: 0.8;
 }
 
 .switch__indicator_active {
@@ -62,6 +68,10 @@
   }
 
   .switch__label {
+    order: 1;
+  }
+
+  .switch__label_active {
     order: 1;
   }
 

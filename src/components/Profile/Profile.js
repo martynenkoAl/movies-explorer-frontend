@@ -2,6 +2,12 @@ import React from 'react';
 import './Profile.css';
 
 export default function Profile() {
+  const [isEdit, setIsEdit] = React.useState(false);
+
+  const changeEditMode = () => {
+    setIsEdit(!isEdit);
+  };
+
   return (
     <div className='profile'>
       <h2 className='profile__greeting'>Привет, Виталий!</h2>
@@ -13,6 +19,7 @@ export default function Profile() {
           <input
             className='profile__input'
             type='text'
+            name='name'
             id='name'
             minLength='2'
             maxLength='30'
@@ -27,25 +34,47 @@ export default function Profile() {
           <input
             className='profile__input'
             type='email'
+            name='email'
             id='email'
             required
             placeholder='pochta@yandex.ru'
           />
         </div>
-        <button type='submit' className='profile__edit'>
-          Редактировать
-        </button>
+        {!isEdit && (
+          <button
+            onClick={changeEditMode}
+            type='submit'
+            className='profile__edit'
+            aria-label='Редактировать'
+          >
+            Редактировать
+          </button>
+        )}
       </form>
-      <button type='button' className='profile__exit'>
-        Выйти из аккаунта
-      </button>
-      {/* временное решение для верстки */}
-      <span className='profile__error-msg'>
-        При обновлении профиля произошла ошибка.
-      </span>
-      <button className='profile__save-btn profile__save-btn_inactive'>
-        Сохранить
-      </button>
+      {!isEdit && (
+        <button
+          type='button'
+          className='profile__exit'
+          aria-label='Выйти из аккаунта'
+        >
+          Выйти из аккаунта
+        </button>
+      )}
+
+      {isEdit && (
+        <div className='profile__edit-box'>
+          <span className='profile__error-msg'>
+            При обновлении профиля произошла ошибка.
+          </span>
+          <button
+            onClick={changeEditMode}
+            className='profile__save-btn'
+            aria-label='Сохранить'
+          >
+            Сохранить
+          </button>
+        </div>
+      )}
     </div>
   );
 }

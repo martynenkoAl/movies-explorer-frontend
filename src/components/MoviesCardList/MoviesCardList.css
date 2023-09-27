@@ -1,5 +1,5 @@
 .list {
-  padding: 120px 70px 80px;
+  padding: 70px 70px 80px;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -27,6 +27,7 @@
   font-weight: 500;
   font-size: 12px;
   line-height: 14.5px;
+  cursor: pointer;
 }
 
 .list__more-btn:hover {
@@ -35,7 +36,7 @@
 
 @media screen and (max-width: 1023px) {
   .list {
-    padding: 70px 30px 80px;
+    padding: 20px 30px 80px;
   }
 
   .list__gallery {

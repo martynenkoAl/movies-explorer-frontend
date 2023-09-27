@@ -18,10 +18,10 @@ export default function AboutProject() {
         />
       </div>
       <div className='project__data'>
-        <div className='project__scale_green'>1 неделя</div>
-        <div className='project__scale_grey'>4 недели</div>
-        <p className='project__text_green'>Back-end</p>
-        <p className='project__text_grey'>Front-end</p>
+        <div className='project__scale-green'>1 неделя</div>
+        <div className='project__scale-grey'>4 недели</div>
+        <p className='project__text-green'>Back-end</p>
+        <p className='project__text-grey'>Front-end</p>
       </div>
     </section>
   );

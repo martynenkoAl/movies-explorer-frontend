@@ -99,7 +99,7 @@
 
 @media screen and (max-width: 767px) {
   .promo {
-    padding: 70px 0 30px;
+    padding: 70px 0 25px;
     grid-template-columns: 1fr;
     grid-template-rows: 206px auto;
     grid-template-areas:
