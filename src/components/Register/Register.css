@@ -65,8 +65,14 @@
   color: #ff3055;
 }
 
+.register__btn-box {
+  display: flex;
+  flex-direction: column;
+  padding-top: 115px;
+}
+
 .register__btn {
-  margin-top: 134px;
+  margin-top: 20px;
   background-color: #3456f3;
   color: #fff;
   border: none;
@@ -81,6 +87,21 @@
 
 .register__btn:hover {
   opacity: 0.8;
+}
+
+.register__btn:disabled {
+  background-color: #f8f8f8;
+  color: #c2c2c2;
+}
+
+.register__error-message {
+  font-weight: 400;
+  padding: 0;
+  margin: 0;
+  font-size: 11px;
+  line-height: 13px;
+  text-align: center;
+  color: #ff004c;
 }
 
 .register__link-text {
@@ -120,7 +141,7 @@
   }
 
   .register__btn {
-    margin-top: 220px;
+    margin-top: 20px;
     font-size: 12px;
     line-height: 14.5px;
   }

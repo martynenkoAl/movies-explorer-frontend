@@ -1,17 +1,47 @@
-import React from 'react';
+import React, { useContext, useEffect, useState } from 'react';
+import CurrentUserContext from '../../contexts/CurrentUserContext';
+import { useFormWithValidation } from '../../hooks/useFormWithValidation';
 import './Profile.css';
 
-export default function Profile() {
-  const [isEdit, setIsEdit] = React.useState(false);
+function Profile({
+  onSignOut,
+  onEdit,
+  setIsError,
+  textError,
+  isLoading,
+  isError,
+  isUpdated,
+}) {
+  const currentUser = useContext(CurrentUserContext);
+  const [isEditMode, setIsEditMode] = useState(false);
+  const form = useFormWithValidation();
+
+  useEffect(() => {
+    if (currentUser) {
+      form.resetForm({ name: currentUser.name, email: currentUser.email });
+    }
+  }, [currentUser]);
+
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    onEdit(form.values.name, form.values.email);
+    setIsEditMode(false);
+  };
 
   const changeEditMode = () => {
-    setIsEdit(!isEdit);
+    setIsEditMode(!isEditMode);
+    setIsError(false);
   };
 
   return (
-    <div className='profile'>
-      <h2 className='profile__greeting'>Привет, Виталий!</h2>
-      <form className='profile__form'>
+    <main className='profile'>
+      <h2 className='profile__greeting'>{`Привет, ${currentUser.name}!`}</h2>
+      <form
+        className='profile__form'
+        onSubmit={handleSubmit}
+        action=''
+        noValidate
+      >
         <div className='profile__input-box'>
           <label className='profile__label' htmlFor='name'>
             Имя
@@ -24,9 +54,21 @@ export default function Profile() {
             minLength='2'
             maxLength='30'
             required
-            placeholder='Виталий'
+            onChange={(e) => {
+              form.handleChange(e);
+              setIsError(false);
+            }}
+            value={form.values.name || ''}
+            disabled={!isEditMode}
           />
         </div>
+        <span
+          className={`profile__text-error ${
+            form.errors.name && 'profile__text-error_active'
+          }`}
+        >
+          {form.errors.name || 'неверные данные'}
+        </span>
         <div className='profile__input-box'>
           <label className='profile__label' htmlFor='email'>
             E-mail
@@ -37,44 +79,61 @@ export default function Profile() {
             name='email'
             id='email'
             required
-            placeholder='pochta@yandex.ru'
+            value={form.values.email || ''}
+            onChange={(e) => {
+              form.handleChange(e);
+              setIsError(false);
+            }}
+            disabled={!isEditMode}
           />
         </div>
-        {!isEdit && (
-          <button
-            onClick={changeEditMode}
-            type='submit'
-            className='profile__edit'
-            aria-label='Редактировать'
-          >
-            Редактировать
-          </button>
+        <span
+          className={`profile__text-error ${
+            form.errors.email && 'profile__text-error_active'
+          }`}
+        >
+          {form.errors.email || 'неверные данные'}
+        </span>
+        {!isEditMode && (
+          <div className='profile__btns-box'>
+            {isUpdated && (
+              <p className='profile__update-message'>Данные изменены</p>
+            )}
+            <button
+              onClick={changeEditMode}
+              type='button'
+              className='profile__edit'
+              aria-label='Редактировать'
+            >
+              Редактировать
+            </button>
+            <button
+              type='button'
+              className='profile__exit'
+              aria-label='Выйти из аккаунта'
+              onClick={onSignOut}
+            >
+              Выйти из аккаунта
+            </button>
+          </div>
+        )}
+        {isEditMode && (
+          <div className='profile__edit-box'>
+            {isError && <p className='profile__error-message'>{textError}</p>}
+            <button
+              type='submit'
+              // onClick={changeEditMode}
+              className='profile__save-btn'
+              aria-label='Сохранить'
+              disabled={!form.isValid || isError}
+            >
+              {isLoading ? 'Сохранение...' : 'Сохранить'}
+            </button>
+          </div>
         )}
       </form>
-      {!isEdit && (
-        <button
-          type='button'
-          className='profile__exit'
-          aria-label='Выйти из аккаунта'
-        >
-          Выйти из аккаунта
-        </button>
-      )}
-
-      {isEdit && (
-        <div className='profile__edit-box'>
-          <span className='profile__error-msg'>
-            При обновлении профиля произошла ошибка.
-          </span>
-          <button
-            onClick={changeEditMode}
-            className='profile__save-btn'
-            aria-label='Сохранить'
-          >
-            Сохранить
-          </button>
-        </div>
-      )}
-    </div>
+    </main>
   );
 }
+
+export default Profile;

@@ -6,10 +6,11 @@
 }
 
 .list__gallery {
+  min-height: 500px;
   margin: 0 auto;
   padding-bottom: 50px;
   display: grid;
-  grid-template-columns: repeat(4, 270px);
+  grid-template-columns: repeat(4, 1fr);
   grid-template-rows: auto;
   row-gap: 36px;
   column-gap: 20px;

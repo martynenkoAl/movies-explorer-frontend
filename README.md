@@ -6,5 +6,7 @@
 
 ## Дополнительная информация
 
-Проект выполнен поо макету: light-1
+Проект выполнен поо макету: light-1  
 Ссылка на макет: https://www.figma.com/file/6FMWkB94wE7KTkcCgUXtnC/light-1?type=design&node-id=932-3908&mode=design&t=BLo968W1UJ0rGzzg-0
+
+Cсылка на сайт: https://movies.mart.nomoredomainsicu.ru
