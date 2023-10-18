@@ -76,4 +76,12 @@
     font-size: 10px;
     line-height: 12px;
   }
+
+  .movie__delete-btn {
+    opacity: 1;
+  }
+
+  .movie__delete-btn:hover {
+    opacity: 0.8;
+  }
 }

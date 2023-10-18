@@ -22,6 +22,15 @@ function Profile({
     }
   }, [currentUser]);
 
+  useEffect(() => {
+    if (
+      currentUser.name === form.values.name &&
+      currentUser.email === form.values.email
+    ) {
+      form.setIsValid(false);
+    }
+  }, [currentUser, setIsError, form]);
+
   const handleSubmit = (e) => {
     e.preventDefault();
     onEdit(form.values.name, form.values.email);
@@ -59,7 +68,7 @@ function Profile({
               setIsError(false);
             }}
             value={form.values.name || ''}
-            disabled={!isEditMode}
+            disabled={!isEditMode || isLoading}
           />
         </div>
         <span
@@ -84,7 +93,7 @@ function Profile({
               form.handleChange(e);
               setIsError(false);
             }}
-            disabled={!isEditMode}
+            disabled={!isEditMode || isLoading}
           />
         </div>
         <span
@@ -122,10 +131,9 @@ function Profile({
             {isError && <p className='profile__error-message'>{textError}</p>}
             <button
               type='submit'
-              // onClick={changeEditMode}
               className='profile__save-btn'
               aria-label='Сохранить'
-              disabled={!form.isValid || isError}
+              disabled={!form.isValid || isError || isLoading}
             >
               {isLoading ? 'Сохранение...' : 'Сохранить'}
             </button>

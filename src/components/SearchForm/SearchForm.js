@@ -9,6 +9,7 @@ export default function SearchForm({
   isShort,
   searchText,
   onSwitch,
+  isLoading,
 }) {
   const form = useFormWithValidation();
   const [isError, setIsError] = useState(false);
@@ -37,6 +38,7 @@ export default function SearchForm({
             placeholder='Фильм'
             className='search__input'
             required
+            disabled={isLoading}
             value={form.values.search || ''}
             onChange={(e) => {
               form.handleChange(e);
@@ -47,7 +49,7 @@ export default function SearchForm({
             type='submit'
             className='search__button'
             aria-label='Найти'
-            disabled={isError}
+            disabled={isError || isLoading}
           >
             <p className='search__btn-txt'>Найти</p>
           </button>

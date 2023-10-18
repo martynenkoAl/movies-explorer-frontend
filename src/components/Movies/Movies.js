@@ -5,6 +5,7 @@ import MoviesCardList from '../MoviesCardList/MoviesCardList';
 import Preloader from '../Preloader/Preloader';
 import { getMovies } from '../../utils/MoviesApi';
 import { useCallback } from 'react';
+import { SHORT_MOVIE_LENGTH } from '../../utils/constants';
 
 function Movies({ onDelete, savedMovies, onLike }) {
   const [searchText, setSearchText] = useState('');
@@ -16,7 +17,7 @@ function Movies({ onDelete, savedMovies, onLike }) {
   const [isFirstSearch, setFirstSearch] = useState(true);
 
   function filterShortMovies(movies) {
-    return movies.filter((item) => item.duration < 40);
+    return movies.filter((item) => item.duration < SHORT_MOVIE_LENGTH);
   }
 
   const handleFilterMovies = useCallback((movies, search, isShort) => {
@@ -37,7 +38,6 @@ function Movies({ onDelete, savedMovies, onLike }) {
   function handleSearchMovie(search) {
     setIsLoading(true);
     setSearchText(search);
-
     if (allMovies.length === 0) {
       getMovies()
         .then((data) => {
@@ -51,7 +51,9 @@ function Movies({ onDelete, savedMovies, onLike }) {
           setIsError(true);
           console.error(`ошибка при поиске фильмов ${error}`);
         })
-        .finally(() => setIsLoading(false));
+        .finally(() => {
+          setIsLoading(false);
+        });
     } else {
       handleFilterMovies(allMovies, search, isShort);
       setIsLoading(false);
@@ -90,6 +92,7 @@ function Movies({ onDelete, savedMovies, onLike }) {
         searchText={searchText}
         onSwitch={handleSwitchShort}
         savedMovies={savedMovies}
+        isLoading={isLoading}
       />
       {isLoading ? (
         <Preloader />
@@ -100,7 +103,6 @@ function Movies({ onDelete, savedMovies, onLike }) {
           savedMovies={savedMovies}
           isError={isError}
           onDelete={onDelete}
-          isLoading={isLoading}
           isFirstSearch={isFirstSearch}
         />
       )}

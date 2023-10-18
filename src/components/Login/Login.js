@@ -99,7 +99,7 @@ export default function Login({
             type='submit'
             className='login__btn'
             aria-label='Войти в профиль'
-            disabled={!form.isValid || isError}
+            disabled={!form.isValid || isError || isLoading}
           >
             {isLoading ? 'Вход...' : 'Войти'}
           </button>

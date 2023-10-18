@@ -128,7 +128,7 @@ export default function Register({
             type='submit'
             className='register__btn'
             aria-label='Зарегистрироваться'
-            disabled={!form.isValid || isError}
+            disabled={!form.isValid || isError || isLoading}
             onClick={handleSubmit}
           >
             {isLoading ? 'Регистрация...' : 'Зарегистрироваться'}

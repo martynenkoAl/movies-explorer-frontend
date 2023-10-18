@@ -16,3 +16,18 @@ export const DUPLICATE_USER_ERR = 'Пользователь с таким email 
 export const REGISTER_ERR = 'При регистрации пользователя произошла ошибка';
 export const UPDATE_ERR = 'При обновлении профиля произошла ошибка';
 export const SERVER_ERR = 'На сервере произошла ошибка';
+
+//rendering dependencies
+export const SCREEN_1024 = 1024;
+export const SCREEN_768 = 768;
+
+export const DEFAULT_NUMBER_OF_CARDS = 16;
+export const DEFAULT_NUMBER_OF_CARDS_1024 = 8;
+export const DEFAULT_NUMBER_OF_CARDS_768 = 5;
+
+export const ADDED_NUMBER_OF_CARDS = 4;
+export const ADDED_NUMBER_OF_CARDS_1024 = 2;
+export const ADDED_NUMBER_OF_CARDS_768 = 2;
+
+//short movies
+export const SHORT_MOVIE_LENGTH = 40;

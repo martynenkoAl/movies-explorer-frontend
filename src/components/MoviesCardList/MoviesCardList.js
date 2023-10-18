@@ -4,7 +4,18 @@ import { useLocation } from 'react-router-dom';
 import { useResize } from '../../hooks/useResize';
 import MoviesCard from '../MoviesCard/MoviesCard';
 import './MoviesCardList.css';
-import { ERROR_SEARCH_MOVIE, NOT_FOUND_MOVIE } from '../../utils/constants';
+import {
+  ERROR_SEARCH_MOVIE,
+  NOT_FOUND_MOVIE,
+  SCREEN_1024,
+  SCREEN_768,
+  DEFAULT_NUMBER_OF_CARDS,
+  DEFAULT_NUMBER_OF_CARDS_1024,
+  DEFAULT_NUMBER_OF_CARDS_768,
+  ADDED_NUMBER_OF_CARDS,
+  ADDED_NUMBER_OF_CARDS_1024,
+  ADDED_NUMBER_OF_CARDS_768,
+} from '../../utils/constants';
 
 export default function MoviesCardList({
   isError,
@@ -27,19 +38,19 @@ export default function MoviesCardList({
   }
 
   useEffect(() => {
-    if (screen > 1280) {
-      setMoviesCount(12);
-      setMoviesAdd(4);
+    if (screen >= SCREEN_1024) {
+      setMoviesCount(DEFAULT_NUMBER_OF_CARDS);
+      setMoviesAdd(ADDED_NUMBER_OF_CARDS);
     }
-    if ((screen > 768) & (screen <= 1280)) {
-      setMoviesCount(8);
-      setMoviesAdd(2);
+    if (screen < SCREEN_1024) {
+      setMoviesCount(DEFAULT_NUMBER_OF_CARDS_1024);
+      setMoviesAdd(ADDED_NUMBER_OF_CARDS_1024);
     }
-    if (screen <= 768) {
-      setMoviesCount(5);
-      setMoviesAdd(2);
+    if (screen < SCREEN_768) {
+      setMoviesCount(DEFAULT_NUMBER_OF_CARDS_768);
+      setMoviesAdd(ADDED_NUMBER_OF_CARDS_768);
     }
-  }, [screen, moviesPage]);
+  }, [screen, moviesPage, movies]);
 
   useEffect(() => {
     if (movies.length === 0 && !isFirstSearch) {
