@@ -51,6 +51,9 @@ export default function MoviesCardList({
 
   return (
     <section className='list'>
+      <span className='list__error'>
+        {isError ? ERROR_SEARCH_MOVIE : isNothingFound && NOT_FOUND_MOVIE}
+      </span>
       <div className='list__gallery'>
         {moviesPage &&
           display.length !== 0 &&
@@ -76,9 +79,6 @@ export default function MoviesCardList({
               />
             );
           })}
-        <span className='list__error'>
-          {isError ? ERROR_SEARCH_MOVIE : isNothingFound && NOT_FOUND_MOVIE}
-        </span>
       </div>
       {moviesPage && movies.length > moviesCount && (
         <button

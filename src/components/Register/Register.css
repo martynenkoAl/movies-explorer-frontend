@@ -43,6 +43,10 @@
   border-bottom: 1px solid #e8e8e8;
 }
 
+.register__input:invalid {
+  color: #ff004c;
+}
+
 .register__input:focus {
   outline: none;
   border-bottom: 1px solid #000;

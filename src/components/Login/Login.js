@@ -16,10 +16,7 @@ export default function Login({
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    onSignIn({
-      email: form.values.email,
-      password: form.values.password,
-    });
+    onSignIn(form.values.email, form.values.password);
   };
 
   useEffect(() => {
