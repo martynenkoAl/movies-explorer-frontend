@@ -23,7 +23,7 @@ export default function BurgerMenu({ onClose, isOpen }) {
         </button>
         <ul className='burger__nav'>
           <li className='burger__item'>
-            <Link className='burger__link' to='/' replace>
+            <Link onClick={onClose} className='burger__link' to='/' replace>
               <p
                 className={`burger__link-txt ${
                   landing && 'burger__link-txt_active'
@@ -34,7 +34,12 @@ export default function BurgerMenu({ onClose, isOpen }) {
             </Link>
           </li>
           <li className='burger__item'>
-            <Link className='burger__link' to='/movies' replace>
+            <Link
+              onClick={onClose}
+              className='burger__link'
+              to='/movies'
+              replace
+            >
               <p
                 className={`burger__link-txt ${
                   movies && 'burger__link-txt_active'
@@ -45,7 +50,12 @@ export default function BurgerMenu({ onClose, isOpen }) {
             </Link>
           </li>
           <li className='burger__item'>
-            <Link className='burger__link' to='/saved-movies' replace>
+            <Link
+              onClick={onClose}
+              className='burger__link'
+              to='/saved-movies'
+              replace
+            >
               <p
                 className={`burger__link-txt ${
                   saved && 'burger__link-txt_active'

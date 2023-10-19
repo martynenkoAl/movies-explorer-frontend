@@ -1,5 +1,6 @@
 .search {
   display: flex;
+  flex-direction: column;
   padding: 70px 70px 48px;
 }
 
@@ -52,6 +53,10 @@
   opacity: 0.8;
 }
 
+.search__button:disabled {
+  background-color: #b1bdf1;
+}
+
 .search__btn-txt {
   padding: 0;
   margin: 0;
@@ -59,6 +64,18 @@
   font-size: 11px;
   line-height: 18px;
   color: #fff;
+}
+
+.search__text-error {
+  padding: 0;
+  margin: 0;
+  font-size: 10px;
+  line-height: 12px;
+  color: transparent;
+}
+
+.search__text-error_active {
+  color: #ff3055;
 }
 
 @media screen and (max-width: 1023px) {
